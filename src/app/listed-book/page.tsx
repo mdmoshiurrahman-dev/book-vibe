@@ -1,12 +1,13 @@
 "use client";
 import { BookDataType } from "@/types/BookData";
 import { useContext } from "react";
-import BookCart from "../../components/bookCart/BookCart";
+// import BookCart from "../../components/bookCart/BookCart";
 import { bookDataContext } from "@/context/BookDataProvide";
+import AddedList from "@/components/AddedList";
 interface BookDataProviderType {
   wishList: BookDataType[];
   setWishList: (book: BookDataType[]) => void;
-  readList: BookDataType[]; 
+  readList: BookDataType[];
   setReadList: (book: BookDataType[]) => void;
 }
 
@@ -15,9 +16,38 @@ const Page = () => {
   const { wishList, readList } = selectedData;
   return (
     <div>
-      {wishList.map((i) => (
-        <BookCart book={i} key={i.bookId} />
-      ))}
+      <div>
+        <div className="bg-gray-100 font-bold text-2xl text-center py-5 my-3 mx-2 rounded-xl">
+          <h2>Books</h2>
+        </div>
+        <div></div>
+      </div>
+      <div className="tabs tabs-lift">
+        <input
+          type="radio"
+          name="my_tabs_3"
+          className="tab"
+          aria-label="Read Books"
+        />
+        <div className="tab-content bg-base-100 border-base-300 p-6">
+          {
+            readList.map(book => <AddedList key={book.bookId} book={book} />)
+          }
+        </div>
+
+        <input
+          type="radio"
+          name="my_tabs_3"
+          className="tab"
+          aria-label="Wishlist Books"
+          defaultChecked
+        />
+        <div className="tab-content bg-base-100 border-base-300 p-6">
+          {
+            wishList.map(book => <AddedList key={book.bookId} book={book} />)
+          }
+        </div>
+      </div>
     </div>
   );
 };

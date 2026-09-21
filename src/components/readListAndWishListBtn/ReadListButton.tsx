@@ -16,8 +16,10 @@ const ReadListButton = ({ book }: ReadListButtonProps) => {
   const { readList, setReadList } = bookState;
 
   const handleReadList = (book: BookDataType): void => {
-    setReadList([...readList, book]);
-    console.log(book);
+    const isExist = readList.find((f) => f.bookId === book.bookId);
+    if (!isExist) {
+      setReadList([...readList, book]);
+    }
   };
   return (
     <>

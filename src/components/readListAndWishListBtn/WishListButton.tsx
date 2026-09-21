@@ -16,7 +16,10 @@ const WishListButton = ({ book }: WishListButtonProps) => {
   const Wishlist = useContext(bookDataContext) as BookStateType;
   const { wishList, setWishList } = Wishlist;
   const handelWishList = (book: BookDataType) => {
-    setWishList([...wishList, book]);
+    const isExist = wishList.find((f) => f.bookId === book.bookId);
+    if (!isExist) {
+      setWishList([...wishList, book]);
+    }
   };
   return (
     <>
