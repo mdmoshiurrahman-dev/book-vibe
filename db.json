@@ -1,5 +1,4 @@
-{
-  "books": [
+{"books": [
   {
     "bookId": 1,
     "bookName": "The Great Gatsby",
@@ -258,5 +257,4 @@
     "id": "J5Kb2XnRt7"
   }
 ]
-
 }

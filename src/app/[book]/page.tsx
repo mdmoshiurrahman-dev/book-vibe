@@ -14,7 +14,7 @@ export const generateStaticParams = async () => {
   return data.map((book) => ({
     book: book.bookId.toString(),
   }));
-};
+ };
 const AboutBookPage = async ({ params }: IAboutBookPageParams) => {
   const { book } = await params;
   const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}?bookId=${book}`);
