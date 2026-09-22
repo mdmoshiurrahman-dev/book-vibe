@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h2 className="text-xl font-bold text-gray-800">Book Vibe</h2>
             <p className="text-sm text-gray-500 mt-1">
-              Read simple and learn beautiful experience.
+              Read simple and learn something new thing.
             </p>
           </div>
 

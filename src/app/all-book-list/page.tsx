@@ -2,7 +2,7 @@ import BookCart from "@/components/bookCart/BookCart";
 import { BookDataType } from "@/types/BookData";
 
 const allBooksPromise = async()=>{
-    const res = await fetch('http://localhost:5000/books', {cache:'force-cache'});
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`, {cache:'force-cache'});
     return res.json();
 }
 

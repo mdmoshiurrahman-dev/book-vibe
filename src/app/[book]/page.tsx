@@ -9,7 +9,7 @@ export interface IAboutBookPageParams {
   }>;
 }
 export const generateStaticParams = async () => {
-  const res = await fetch("http://localhost:5000/books");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`);
   const data: BookDataType[] = await res.json();
   return data.map((book) => ({
     book: book.bookId.toString(),
@@ -17,7 +17,7 @@ export const generateStaticParams = async () => {
 };
 const AboutBookPage = async ({ params }: IAboutBookPageParams) => {
   const { book } = await params;
-  const response = await fetch(`http://localhost:5000/books?bookId=${book}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}?bookId=${book}`);
   const data: BookDataType[] = await response.json();
   const bookData: BookDataType = data[0];
   return (

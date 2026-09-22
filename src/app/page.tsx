@@ -2,7 +2,7 @@ import BookCart from "@/components/bookCart/BookCart";
 import Banner from "@/components/homepage/Banner";
 import { BookDataType } from "@/types/BookData";
 const bookDataPromise = async () => {
-  const res = await fetch("http://localhost:5000/books", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`, {
     next: { revalidate: 3600 },
   });
   return res.json();
