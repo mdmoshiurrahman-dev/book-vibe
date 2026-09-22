@@ -1,7 +1,6 @@
 import { BookDataType } from "@/types/BookData";
 import Image from "next/image";
 import Link from "next/link";
-import RemoveFromListButton from "./readListAndWishListBtn/RemoveFromListButton";
 import RemoveFromWishList from "./readListAndWishListBtn/RemoveFromWishList";
 
 export interface AddedListProps {
@@ -40,7 +39,7 @@ const AddedWishList = ({ book }: AddedListProps) => {
             </Link>
           </div>
           <div>
-         <RemoveFromWishList/>
+         <RemoveFromWishList book={book}/>
           </div>
         </div>
       </div>

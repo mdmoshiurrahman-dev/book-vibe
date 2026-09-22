@@ -45,11 +45,11 @@ const NavBar = () => {
         <li>
           <Link
             className={
-              pathName === "#"
+              pathName === "/pages-to-read"
                 ? "text-[#23BE0A] font-semibold px-2 py-1.5 border-[1.5px] rounded-md border-[#23BE0A]"
                 : ""
             }
-            href="#"
+            href="/pages-to-read"
           >
             Pages to Read
           </Link>
