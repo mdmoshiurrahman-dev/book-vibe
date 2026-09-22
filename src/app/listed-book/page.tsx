@@ -4,6 +4,7 @@ import { useContext } from "react";
 // import BookCart from "../../components/bookCart/BookCart";
 import { bookDataContext } from "@/context/BookDataProvide";
 import AddedList from "@/components/AddedList";
+import AddedWishList from "@/components/AddedWishList";
 interface BookDataProviderType {
   wishList: BookDataType[];
   setWishList: (book: BookDataType[]) => void;
@@ -29,10 +30,10 @@ const Page = () => {
           className="tab"
           aria-label="Read Books"
         />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
-          {
-            readList.map(book => <AddedList key={book.bookId} book={book} />)
-          }
+        <div className="tab-content bg-base-100 border-base-300 p-6 flex flex-col gap-4">
+          {readList.map((book) => (
+            <AddedList key={book.bookId} book={book} />
+          ))}
         </div>
 
         <input
@@ -42,10 +43,10 @@ const Page = () => {
           aria-label="Wishlist Books"
           defaultChecked
         />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
-          {
-            wishList.map(book => <AddedList key={book.bookId} book={book} />)
-          }
+        <div className="tab-content bg-base-100 border-base-300 p-6 flex flex-col gap-4">
+          {wishList.map((book) => (
+            <AddedWishList key={book.bookId} book={book} />
+          ))}
         </div>
       </div>
     </div>

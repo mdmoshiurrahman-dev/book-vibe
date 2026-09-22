@@ -2,12 +2,13 @@ import { BookDataType } from "@/types/BookData";
 import Image from "next/image";
 import Link from "next/link";
 import RemoveFromListButton from "./readListAndWishListBtn/RemoveFromListButton";
+import RemoveFromWishList from "./readListAndWishListBtn/RemoveFromWishList";
 
 export interface AddedListProps {
   book: BookDataType;
 }
 
-const AddedList = ({ book }: AddedListProps) => {
+const AddedWishList = ({ book }: AddedListProps) => {
   return (
     <div className="flex gap-5 border border-gray-400 p-3 rounded-xl">
       <div className="flex justify-center items-center bg-gray-100 p-5 rounded-xl">
@@ -39,7 +40,7 @@ const AddedList = ({ book }: AddedListProps) => {
             </Link>
           </div>
           <div>
-            <RemoveFromListButton book={book} />
+         <RemoveFromWishList/>
           </div>
         </div>
       </div>
@@ -47,4 +48,4 @@ const AddedList = ({ book }: AddedListProps) => {
   );
 };
 
-export default AddedList;
+export default AddedWishList;
